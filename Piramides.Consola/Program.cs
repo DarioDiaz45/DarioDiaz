@@ -5,8 +5,7 @@ using System.ComponentModel.DataAnnotations;
 internal class Program
 {
 
-    const string ARCHIVO = "Piramides Guardadas!!";
-
+   
     private static void Main(string[] args)
     {
         Console.WriteLine(" Registro de Pirámides Cuadradas");
@@ -28,7 +27,7 @@ internal class Program
                 Console.WriteLine(piramide);
 
                 
-                GuardarEnArchivo(piramide);
+                
             }
             else
             {
@@ -41,7 +40,7 @@ internal class Program
 
         } while (PreguntarContinuar("¿Desea cargar otra pirámide?"));
 
-        Console.WriteLine(" Se guardaron las pirámides en el archivo: " + ARCHIVO);
+        Console.WriteLine(" Se guardaron las pirámides en el archivo: " );
     }
 
     public static int LeerEntero(string mensaje)
@@ -62,19 +61,6 @@ internal class Program
         return resp == "SI";
     }
 
-    private static void GuardarEnArchivo(PiramideCuadradas piramide)
-    {
-        try
-        {
-            using (StreamWriter sw = new StreamWriter(ARCHIVO, append: true))
-            {
-                Console.WriteLine(piramide.MostrarInfo());
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(" Error al guardar en archivo: " + ex.Message);
-        }
-    }
+    
 }
     
